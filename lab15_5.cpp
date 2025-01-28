@@ -20,3 +20,22 @@ int main(){
 
 //Do not modify the code above this line
 //Write definition of shuffle() using pointer after this line. 
+
+void shuffle(int *a, int *b, int *c, int *d){
+    int satangs[] = {*a,*b,*c,*d};
+    int used[4] = {false, false, false, false};
+    
+    int salaped[4];
+    for(int i =0; i<4; i++){
+        int index;
+        do{
+            index = rand()%4;
+        }while (used[index]);
+        salaped[i] = satangs[index];
+        used[index] = true;
+    }
+    *a = salaped[0];
+    *b = salaped[1];
+    *c = salaped[2];
+    *d = salaped[3];
+}
